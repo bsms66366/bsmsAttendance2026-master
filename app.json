@@ -4,12 +4,12 @@
     "slug": "Attendance2026",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/AppIcon_120x120.png",
+    "icon": "./assets/images/Attendance120x120.png",
     "scheme": "attendance2026",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
     "splash": {
-      "image": "./assets/images/AppIcon_120x120.png",
+      "image": "./assets/images/Attendance120x120.png",
       "scheme": "attendance2026",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
@@ -23,7 +23,7 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "foregroundImage": "./assets/images/Attendance120x120.png",
         "backgroundColor": "#ffffff"
       },
       "edgeToEdgeEnabled": true,
@@ -31,7 +31,8 @@
       "permissions": [
         "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
-      ]
+      ],
+      "package": "com.cjtaylormade.Attendance2026"
     },
     "web": {
       "bundler": "metro",
