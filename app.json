@@ -1,0 +1,61 @@
+{
+  "expo": {
+    "name": "Attendance2026",
+    "slug": "Attendance2026",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/AppIcon_120x120.png",
+    "scheme": "attendance2026",
+    "userInterfaceStyle": "automatic",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/images/AppIcon_120x120.png",
+      "scheme": "attendance2026",
+      "resizeMode": "contain",
+      "backgroundColor": "#ffffff"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.cjtaylormade.Attendance2026",
+      "infoPlist": {
+        "ITSAppUsesNonExemptEncryption": false
+      }
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#ffffff"
+      },
+      "edgeToEdgeEnabled": true,
+      "predictiveBackGestureEnabled": false,
+      "permissions": [
+        "android.permission.RECORD_AUDIO",
+        "android.permission.MODIFY_AUDIO_SETTINGS"
+      ]
+    },
+    "web": {
+      "bundler": "metro",
+      "output": "static",
+      "favicon": "./assets/images/favicon.png"
+    },
+    "plugins": [
+      "expo-router",
+      "expo-video",
+      "expo-audio",
+      "expo-web-browser",
+      "expo-sqlite",
+      "expo-secure-store",
+      "expo-asset",
+      "expo-background-task"
+    ],
+    "experiments": {
+      "typedRoutes": true
+    },
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "c7950bae-d498-4861-b91b-9abf364b0393"
+      }
+    }
+  }
+}
