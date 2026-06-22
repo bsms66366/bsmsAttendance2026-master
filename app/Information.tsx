@@ -1,6 +1,6 @@
 import { useThemeColor } from '@/components/Themed';
 import * as React from 'react';
-import { Image, ScrollView, StyleSheet, Text, View } from 'react-native';
+import { Image, Linking, ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
 
 const MyComponent = () => {
@@ -60,6 +60,21 @@ const MyComponent = () => {
             You should always dress smartly when in a clinical environment and when meeting patients. Please note that this includes examinations which occur in, or simulate, the clinical environment such as the OCSEs.
           </Text>
         </View>
+
+        <View style={[styles.section, { backgroundColor: cardColor }]}>
+          <View style={styles.titleRow}>
+            <Image
+              source={require('../assets/images/bsmsHelixYelo.png')}
+              style={styles.icon}
+            />
+            <Text style={[styles.sectionTitle, { color: headingColor }]}>BSMSDocuments</Text>
+          </View>
+          <TouchableOpacity
+            onPress={() => Linking.openURL('https://placements.bsms.ac.uk/pdfDocuments/BSMS_Dress_Code.pdf')}
+          >
+            <Text style={[styles.link, { color: primaryColor }]}>📄 View Dress code Document (PDF)</Text>
+          </TouchableOpacity>
+        </View>
       </ScrollView>
     </SafeAreaView>
   );
@@ -105,6 +120,11 @@ const styles = StyleSheet.create({
   paragraph: {
     fontSize: 15,
     lineHeight: 22,
+  },
+  link: {
+    fontSize: 15,
+    textDecorationLine: 'underline',
+    fontWeight: '600',
   },
 });
 
