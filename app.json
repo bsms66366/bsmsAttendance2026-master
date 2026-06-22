@@ -4,7 +4,7 @@
     "slug": "Attendance2026",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/Attendance120x120.png",
+    "icon": "./assets/images/icon.png",
     "scheme": "attendance2026",
     "userInterfaceStyle": "automatic",
     "newArchEnabled": true,
@@ -47,7 +47,8 @@
       "expo-sqlite",
       "expo-secure-store",
       "expo-asset",
-      "expo-background-task"
+      "expo-background-task",
+      "expo-font"
     ],
     "experiments": {
       "typedRoutes": true

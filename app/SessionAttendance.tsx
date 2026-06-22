@@ -176,6 +176,18 @@ export default function SessionAttendance() {
             const statusCode = Number(error?.response?.status ?? 0);
             const canRetry = nextAttempts < SUBMISSION_MAX_RETRY_ATTEMPTS;
 
+            if (statusCode === 422) {
+              resultMap[item.local_id] = {
+                status: 'saved',
+                submit_attempts: nextAttempts,
+                last_attempt_at: new Date().toISOString(),
+                saved_at: new Date().toISOString(),
+                error_message: 'Already recorded on server.',
+              };
+              consecutive503Ref.current = 0;
+              continue;
+            }
+
             resultMap[item.local_id] = {
               status: 'pending_local',
               submit_attempts: nextAttempts,
@@ -384,8 +396,16 @@ export default function SessionAttendance() {
 
       setSelectedSessionId(null);
       processSubmissionQueue();
-    } catch {
-      Alert.alert('Submit failed', 'Could not submit attendance right now. Please try again.');
+    } catch (error: any) {
+      const status = Number(error?.response?.status ?? 0);
+      if (status === 422) {
+        Alert.alert(
+          'Already recorded',
+          `Attendance for this session has already been saved. Please select a different session.`
+        );
+      } else {
+        Alert.alert('Submit failed', 'Could not submit attendance right now. Please try again.');
+      }
     } finally {
       setSubmitting(false);
     }
