@@ -352,8 +352,7 @@ export default function SessionAttendance() {
 
     setSubmitting(true);
     try {
-      const sessionDate = new Date().toISOString().split('T')[0];
-
+      const sessionDate = new Date().toLocaleDateString('en-CA', { timeZone: 'Europe/London' });
       if (!OFFLINE_QUEUE_ENABLED) {
         await axiosConfig.post('/save-session', {
           session_id: selectedSessionId,

@@ -32,7 +32,7 @@
         "android.permission.RECORD_AUDIO",
         "android.permission.MODIFY_AUDIO_SETTINGS"
       ],
-      "package": "com.cjtaylormade.Attendance2026"
+      "package": "com.bsms.attendanceapp"
     },
     "web": {
       "bundler": "metro",

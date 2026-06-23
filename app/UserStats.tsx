@@ -288,7 +288,18 @@ export default function UserStats() {
         ) : (
           recentSignoffs.map((s, idx) => {
             const barcode = String((s as any)?.location_barcode ?? '');
-            const createdAt = String((s as any)?.created_at ?? '');
+            const createdAtRaw = String((s as any)?.created_at ?? '');
+            const createdAt = createdAtRaw
+              ? new Date(createdAtRaw).toLocaleString('en-GB', {
+                  timeZone: 'Europe/London',
+                  weekday: 'short',
+                  day: 'numeric',
+                  month: 'short',
+                  year: 'numeric',
+                  hour: '2-digit',
+                  minute: '2-digit',
+                })
+              : '';
             return (
               <View key={`sig-${idx}`} style={[styles.rowItem, { backgroundColor: cardColor, borderColor }]}> 
                 <Text style={[styles.rowTitle, { color: headingColor }]} numberOfLines={1}>
