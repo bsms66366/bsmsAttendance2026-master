@@ -3,12 +3,12 @@ import * as Location from 'expo-location';
 import { useLocalSearchParams, useRouter } from 'expo-router';
 import React, { useCallback, useContext, useEffect, useMemo, useState } from 'react';
 import {
-  StyleSheet,
-  Switch,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View
+    StyleSheet,
+    Switch,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View
 } from 'react-native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -198,14 +198,14 @@ export default function ScanQRScreen6() {
       <SafeAreaView style={[styles.safe, { backgroundColor }]}>
         <View style={[styles.container, { backgroundColor }]}>
           <Text style={[styles.title, { color: accentColor }]}>Barcode Sign In</Text>
-          <Text style={[styles.subtitle, { color: textColor }]}>Camera permission is required to scan.</Text>
+          <Text style={[styles.subtitle, { color: textColor }]}>Camera access is needed to scan barcodes and QR codes for attendance.</Text>
 
           <TouchableOpacity
             onPress={() => requestPermission()}
             style={[styles.primaryButton, { backgroundColor: accentColor }]}
             activeOpacity={0.85}
           >
-            <Text style={[styles.primaryButtonText, { color: buttonTextColor }]}>Allow Camera</Text>
+            <Text style={[styles.primaryButtonText, { color: buttonTextColor }]}>Continue</Text>
           </TouchableOpacity>
 
           <TouchableOpacity onPress={() => router.back()} style={[styles.secondaryButton, { borderColor: accentColor }]} activeOpacity={0.85}>

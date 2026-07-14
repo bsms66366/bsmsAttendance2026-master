@@ -2,7 +2,7 @@
   "expo": {
     "name": "Attendance2026",
     "slug": "Attendance2026",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "attendance2026",
@@ -18,7 +18,9 @@
       "supportsTablet": true,
       "bundleIdentifier": "com.cjtaylormade.Attendance2026",
       "infoPlist": {
-        "ITSAppUsesNonExemptEncryption": false
+        "ITSAppUsesNonExemptEncryption": false,
+        "NSCameraUsageDescription": "This app uses your camera to scan QR codes and barcodes at your clinical placement site to record attendance. For example, you will scan a barcode displayed at the placement location to check in or out of a session.",
+        "NSLocationWhenInUseUsageDescription": "This app uses your location to verify that you are physically present at your clinical placement site when recording attendance. For example, your approximate postcode is matched against your registered placement location to confirm on-site check-in."
       }
     },
     "android": {
@@ -48,7 +50,19 @@
       "expo-secure-store",
       "expo-asset",
       "expo-background-task",
-      "expo-font"
+      "expo-font",
+      [
+        "expo-camera",
+        {
+          "cameraPermission": "This app uses your camera to scan QR codes and barcodes at your clinical placement site to record attendance. For example, you will scan a barcode displayed at the placement location to check in or out of a session."
+        }
+      ],
+      [
+        "expo-location",
+        {
+          "locationWhenInUsePermission": "This app uses your location to verify that you are physically present at your clinical placement site when recording attendance. For example, your approximate postcode is matched against your registered placement location to confirm on-site check-in."
+        }
+      ]
     ],
     "experiments": {
       "typedRoutes": true

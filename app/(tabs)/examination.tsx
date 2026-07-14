@@ -99,7 +99,7 @@ export default function ExaminationScreen() {
   const merged = useMemo(() => {
     return items.map((it) => {
       const r = resultsByExamId[String(it.id)];
-      const isCompetent = (r?.is_competent ?? 0) === 1;
+      const isCompetent = !!r?.is_competent;
       const completedAtRaw = (r as any)?.assessed_at ?? (r as any)?.assessedAt ?? (r as any)?.created_at ?? null;
       return {
         ...it,

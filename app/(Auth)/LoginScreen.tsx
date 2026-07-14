@@ -42,7 +42,7 @@ export default function LoginScreen() {
         <View style={{ marginTop: 130, width: 260 }}>
           <View style={{ alignItems: 'center' }}>
             <Text style={{ color: headingColor, fontSize: 20 }}>BSMS PLACEMENTS</Text>
-            <Image style={styles.logo} source={require('../../assets/images/ClinicalSkillsLogo4-01.png')} />
+            <Image style={styles.logo} source={require('../../assets/images/ClinicalSkillsLogo3c-02.png')} />
           </View>
           <View style={{ marginTop: 10 }}>
             {error && <Text style={{ color: 'red' }}>{error}</Text>}
@@ -96,8 +96,8 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   logo: {
-    width: 200,
-    height: 250,
+    width: 210,
+    height: 300,
   },
   inputBox: {
     backgroundColor: 'white',
