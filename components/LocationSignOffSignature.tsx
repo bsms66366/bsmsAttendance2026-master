@@ -1,6 +1,6 @@
+import { MaterialIcons } from '@expo/vector-icons';
 import React, { forwardRef, useCallback, useImperativeHandle, useRef, useState } from 'react';
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons';
 import SignaturePad, { SignaturePadRef } from './SignaturePad';
 
 export type LocationSignOffSignatureRef = {
@@ -57,7 +57,7 @@ export const LocationSignOffSignature = forwardRef<LocationSignOffSignatureRef, 
         </View>
         <View style={styles.signatureBox}>
           <SignaturePad ref={padRef} onSigningChange={handleSigningChange} />
-          {isEmpty && <Text style={styles.signaturePlaceholder}>Sign here</Text>}
+          {isEmpty && <Text style={styles.signaturePlaceholder}>Press down to add signature</Text>}
         </View>
       </View>
     );

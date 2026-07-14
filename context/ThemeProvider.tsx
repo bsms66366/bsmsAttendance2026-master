@@ -18,7 +18,7 @@ const GRADIENT_STORAGE_KEY = '@app_gradient_enabled';
 
 const ThemeContext = createContext<ThemeContextType>({
   themeMode: 'system',
-  colorScheme: 'light',
+  colorScheme: 'dark',
   setThemeMode: () => {},
   gradientEnabled: false,
   setGradientEnabled: () => {},

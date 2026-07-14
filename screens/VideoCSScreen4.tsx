@@ -44,12 +44,29 @@ export default function App() {
           color: headingColor,
           fontSize: 20,
           marginTop: 10,
-          marginBottom: 15,
+          marginBottom: 10,
           textAlign: "center",
         }}
       >
         CLINICAL SKILLS VIDEOS
       </Text>
+      <View
+        style={{
+          backgroundColor: '#cdf9ff',
+          borderColor: '#e6ac00',
+          borderWidth: 1,
+          borderRadius: 6,
+          padding: 10,
+          marginBottom: 15,
+        }}
+      >
+        <Text style={{ color: '#7a5c00', fontSize: 13, textAlign: 'center', fontWeight: '600', marginBottom: 4 }}>
+          🔒 Internal BSMS Teaching Materials
+        </Text>
+        <Text style={{ color: '#7a5c00', fontSize: 12, textAlign: 'center' }}>
+          These videos are hosted on an external BSMS platform and require a separate login. This content is intended solely to support your medical education at BSMS.
+        </Text>
+      </View>
       {isLoading ? (
         <ActivityIndicator />
       ) : (

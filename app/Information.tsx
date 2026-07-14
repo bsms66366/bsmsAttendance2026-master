@@ -72,7 +72,12 @@ const MyComponent = () => {
           <TouchableOpacity
             onPress={() => Linking.openURL('https://placements.bsms.ac.uk/pdfDocuments/BSMS_Dress_Code.pdf')}
           >
-            <Text style={[styles.link, { color: primaryColor }]}>📄 View Dress code Document (PDF)</Text>
+            <Text style={[styles.link, { color: '#ffffff'}]}>📄 View Dress code Document (PDF)</Text>
+          </TouchableOpacity>
+           <TouchableOpacity
+            onPress={() => Linking.openURL('https://placements.bsms.ac.uk/pdfDocuments/Placements_Attendance_Sources_References.pdf')}
+          >
+            <Text style={[styles.link, { color: '#ffffff' }]}>📄 Sources / References (PDF)</Text>
           </TouchableOpacity>
         </View>
       </ScrollView>

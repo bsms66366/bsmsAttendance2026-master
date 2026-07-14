@@ -1,10 +1,10 @@
 import React, {
-  forwardRef,
-  useCallback,
-  useImperativeHandle,
-  useMemo,
-  useRef,
-  useState,
+    forwardRef,
+    useCallback,
+    useImperativeHandle,
+    useMemo,
+    useRef,
+    useState,
 } from 'react';
 import { PanResponder, StyleSheet, Text, View } from 'react-native';
 import Svg, { Path } from 'react-native-svg';
@@ -178,7 +178,7 @@ const SignaturePad = forwardRef<SignaturePadRef, Props>(
         </Svg>
 
         {strokes.length === 0 && !activePath && (
-          <Text style={styles.placeholder}>Sign here</Text>
+          <Text style={styles.placeholder}>Press down to add signature</Text>
         )}
       </View>
     );

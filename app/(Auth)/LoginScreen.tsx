@@ -1,14 +1,15 @@
 import { useRouter } from 'expo-router';
 import React, { useContext, useEffect, useState } from 'react';
 import {
-  ActivityIndicator,
-  Image,
-  ScrollView,
-  StyleSheet,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  View,
+    ActivityIndicator,
+    Alert,
+    Image,
+    ScrollView,
+    StyleSheet,
+    Text,
+    TextInput,
+    TouchableOpacity,
+    View,
 } from 'react-native';
 
 import { useThemeColor } from '@/components/Themed';
@@ -25,6 +26,14 @@ export default function LoginScreen() {
   const accentColor = useThemeColor({}, 'accent');
   const buttonTextColor = useThemeColor({}, 'buttonText');
   const textColor = useThemeColor({}, 'text');
+
+  useEffect(() => {
+    Alert.alert(
+      'Educational Use Only',
+      'This app is for educational purposes only and must not be used to make clinical decisions without supervision.',
+      [{ text: 'I Understand', style: 'default' }]
+    );
+  }, []);
 
   useEffect(() => {
     if (user?.token) {

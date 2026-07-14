@@ -1,7 +1,7 @@
 import { LinearGradient } from "expo-linear-gradient";
 import { useRouter } from "expo-router";
 import React, { useContext } from "react";
-import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { Alert, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 //import Forgot from './Auth/Forgot';
 //import ResetPassword from '../screens/Auth/ResetPassword';
 
@@ -25,6 +25,20 @@ import { useTheme } from "../context/ThemeProvider";
 export default function SettingsScreen() {
   const router = useRouter();
   const { logout } = useContext(AuthContext);
+
+  const handleLogout = () => {
+    Alert.alert("Log Out", "Are you sure you want to log out?", [
+      { text: "Cancel", style: "cancel" },
+      {
+        text: "Log Out",
+        style: "destructive",
+        onPress: async () => {
+          await logout();
+          Alert.alert("Logged Out", "You have been successfully logged out.");
+        },
+      },
+    ]);
+  };
   const { themeMode, setThemeMode, gradientEnabled, setGradientEnabled } =
     useTheme();
 
@@ -245,7 +259,7 @@ source={require('../assets/images/ClinicalSkillsLogo4-01.png')}
       </View>
 
       <TouchableOpacity
-        onPress={logout}
+        onPress={handleLogout}
         style={[styles.logoutButton, { backgroundColor: dangerColor }]}
       >
         <Text style={styles.logoutButtonText}>Logout</Text>
